@@ -1,3 +1,10 @@
 from django.shortcuts import render
 
-# Create your views here.
+def Home(request):
+    
+    hello = "Hello New Django Student"
+    
+    Context = {
+        "hello": hello
+    }
+    return render(request, "home/index.html", Context)
