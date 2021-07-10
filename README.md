@@ -1,3 +1,1 @@
-### Python Django Series - Web App, Blog, API, VueJS, 
-
-ReactJS & AngularJS
+### Python Django Series - Web App, Blog, API, VueJS, ReactJS & AngularJS
