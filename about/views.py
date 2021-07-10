@@ -1,3 +1,10 @@
 from django.shortcuts import render
 
-# Create your views here.
+def About(request):
+    
+    mgs = "About us Page"
+    
+    Context = {
+        "mgs": mgs
+    }
+    return render(request, "about/index.html", Context)

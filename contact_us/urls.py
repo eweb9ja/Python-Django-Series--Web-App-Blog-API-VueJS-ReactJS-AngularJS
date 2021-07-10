@@ -1,5 +1,6 @@
 from django.urls import path
+from .views import ContactUs
 
 urlpatterns = [
-    # path('', add_function, name="home"),
+    path('', ContactUs, name="contact_us"),
 ]

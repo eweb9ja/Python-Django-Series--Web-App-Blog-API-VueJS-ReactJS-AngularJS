@@ -1,3 +1,10 @@
 from django.shortcuts import render
 
-# Create your views here.
+def ServiceProduct(request):
+    
+    mgs = "Blog us Page"
+    
+    Context = {
+        "mgs": mgs
+    }
+    return render(request, "service_product/index.html", Context)
