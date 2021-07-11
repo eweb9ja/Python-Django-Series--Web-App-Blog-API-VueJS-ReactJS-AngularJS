@@ -8,3 +8,12 @@ def Blog(request):
         "mgs": mgs
     }
     return render(request, "blog/index.html", Context)
+
+
+def BlogCreate(request):
+    
+    
+    Context = {
+
+    }
+    return render(request, "blog/create.html", Context)

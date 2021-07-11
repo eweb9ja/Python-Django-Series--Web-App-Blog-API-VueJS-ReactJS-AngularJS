@@ -1,14 +1,46 @@
 {% extends 'base.html' %}
 {% load static %}	
 
-{% block title %}Welcome to Python Django Series - Web App, Blog, API, VueJS, ReactJS & AngularJS - Home page {% endblock %}
+{% block title %}Blog - Python Django Series - Web App, Blog, API, VueJS, ReactJS & AngularJS - Home page {% endblock %}
 
 {% block content %}
-    <h1>Welcome to Blog page</h1>
-    <p>{{ mgs }}</p>
-    {% endblock %}
-
-    {% block javascript %} {% endblock %}
-    <script>
+ 
+    <header>
+        <div class="container">
+            <h1>Blog</h1>
+            <p class="lead">
+                You are Welcome to our Blog page
+            </p>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <img src="..." class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="/blog/create/" class="btn btn-primary">Read more...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card">
+                    <img src="..." class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Read more...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
     
-    </script>
+{% endblock %}
+
+{% block javascript %} {% endblock %}
+<script>
+
+</script>
