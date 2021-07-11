@@ -12,6 +12,16 @@ def Blog(request):
     return render(request, "blog/index.html", Context)
 
 
+def ShowBlog(request, id=None):
+    
+    blog = BlogPage.objects.filter(id=id)
+    
+    Context = {
+        "blog":blog
+    }
+    return render(request, "blog/show.html", Context)
+
+
 def BlogCreate(request):
     
     if request.method == "POST":

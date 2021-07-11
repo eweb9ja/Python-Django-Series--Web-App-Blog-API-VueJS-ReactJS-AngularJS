@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}	
+
+{% block title %}Blog Post Details - Python Django Series - Web App, Blog, API, VueJS, ReactJS & AngularJS - Home page {% endblock %}
+
+{% block content %}
+ 
+    <header>
+        <div class="container">
+            <h1>Blog details</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                {% for item in  blog %}
+                <div class="card">
+                    <img src="{{ item.image.url }}" class="card-img-top img-fluid" alt="post image">
+                    <div class="card-body">
+                        <div class="row" >
+                                <div class="col-md-9 col-sm-8  col-xs-12"><h2 class="card-title text-bold" style="font-size: 24px;"><b> {{ item.title }}</b></h2></div>
+                                <div class="col-md-3 col-sm-4 col-xs-12" align="right"><b><a href="/blog/edit/{{ item.id }}/" class="item-link">Edit</a><a href="/blog/delete/{{ item.id }}/" class="item-link" style="margin-left: 10px;">Delete</a></b></div>
+                        </div>
+                        <p class="card-text">{{ item.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+        
+    {% endblock %}
+    
+    {% block javascript %} {% endblock %}
+    <script>
+    
+    </script>

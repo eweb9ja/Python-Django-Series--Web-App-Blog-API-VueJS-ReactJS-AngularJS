@@ -8,10 +8,11 @@
     <header>
         <div class="container">
             <h1>Blog</h1>
-            <p class="lead">
-                You are Welcome to our Blog page
-                <span style="margin-left:50%"><a href="/blog/create/" class="btn btn-primary">Create Blog</a></span>
-            </p>
+            <div class="row" style="padding: 10px;">
+                <div class="col-md-10"> You are Welcome to our Blog page </div>
+                <div class="col-md-2" align="right">
+                    <a href="/blog/create/" class="btn btn-primary">Create Blog</a></div>
+            </div>
         </div>
     </header>
     <div class="container">
@@ -26,14 +27,18 @@
         <div class="row">
             {% for blog in blogs %}
             <div class="col-6">
-                <div class="card">
-                    <img src="{{ blog.image.url }}" class="card-img-top img-fluid" alt="post image">
-                    <div class="card-body">
-                        <h5 class="card-title text-bold"><b> {{ blog.title }}</b></h5>
-                        <p class="card-text">{{ blog.description |truncatechars:200 }}</p>
-                        <a href="/blog/show/" class="btn btn-primary">Read more...</a>
+                    <div class="card">
+                        <img src="{{ blog.image.url }}" class="card-img-top img-fluid" alt="post image">
+                        <div class="card-body">
+                            <div class="row" >
+                                    <div class="col-md-8 col-sm-8  col-xs-12"><h2 class="card-title text-bold" style="font-size: 24px;"><b> {{ blog.title }}</b></h2></div>
+                                    <div class="col-md-4 col-sm-4 col-xs-12"><b><a href="/blog/edit/{{ blog.id }}/" class="item-link">Edit</a><a href="/blog/delete/{{ blog.id }}/" class="item-link" style="margin-left: 10px;">Delete</a></b></div>
+                            </div>
+                            
+                            <p class="card-text">{{ blog.description |truncatechars:200 }}</p>
+                            <a href="/blog/show/{{ blog.id }}/" class="btn btn-primary">Read more...</a>
+                        </div>
                     </div>
-                </div>
             </div>
             {% endfor %}
         </div>
