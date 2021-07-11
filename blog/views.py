@@ -1,17 +1,28 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import BlogPage
+from django.contrib import messages
 
 def Blog(request):
     
-    mgs = "Blog us Page"
+    blogs = BlogPage.objects.filter()
     
     Context = {
-        "mgs": mgs
+        "blogs":blogs
     }
     return render(request, "blog/index.html", Context)
 
 
 def BlogCreate(request):
     
+    if request.method == "POST":
+        title = request.POST["title"]
+        description = request.POST["description"]
+        image = request.FILES.get("image", '')
+        
+        BlogPage.objects.create(title=title, description=description, image=image)
+        
+        messages.success(request, "Blog Post is Successful!")
+        return redirect("blog")
     
     Context = {
 
