@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}	
+
+{% block title %}Welcome to Python Django Series - Web App, Blog, API, VueJS, ReactJS & AngularJS - Home page {% endblock %}
+
+{% block content %}
     <h1>Welcome to About us page</h1>
     <p>{{ mgs }}</p>
-</body>
-</html>
+    {% endblock %}
+
+    {% block javascript %} {% endblock %}
+    <script>
+    
+    </script>
