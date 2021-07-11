@@ -4,7 +4,7 @@ from django.contrib import messages
 
 def Blog(request):
     
-    blogs = BlogPage.objects.filter()
+    blogs = BlogPage.objects.filter().order_by("-id")
     
     Context = {
         "blogs":blogs
